@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# JupyterLab 
+.ipynb_checkpoints
+
+# LaTeX
+*.aux
+*.toc
+*.out
+*.log
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.synctex.gz
+*.pdf
