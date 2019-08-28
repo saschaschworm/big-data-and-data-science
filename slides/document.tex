@@ -1,0 +1,184 @@
+% !TeX spellcheck = en_US
+
+% Initialization
+\documentclass[8pt, aspectratio=169, notes]{beamer}
+\usetheme[sectionpage=simple, subsectionpage=simple, numbering=counter]{metropolis}
+
+% Layout and Graphic Packages
+\usepackage{array}
+\usepackage{layouts}
+\usepackage{booktabs}
+\usepackage[export]{adjustbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{color, colortbl}
+\usepackage[normalem]{ulem}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{tikz}
+
+% Math and Source Code Packages
+\usepackage[ruled, lined, linesnumbered]{algorithm2e}
+\usepackage{listings}
+\usepackage{mathtools}
+
+% Miscellaneous Packages
+\usepackage{subfiles}
+\usepackage{hyperref}
+
+% Feature Flag Initialization
+\newif\iffom
+
+% Token Initialization
+\newtoks\currentsemester
+\newtoks\presenters
+\newtoks\gitcommit
+\newtoks\gitdate
+
+% Step Counter Initialization
+\newcounter{openexercise}
+\newcounter{devexercise}
+
+% Default Feature Flags
+\fomtrue
+
+% Default Tokens
+\currentsemester{Winter Term 2019/2020}
+\presenters{Sascha Schworm, M.Sc.}
+\gitcommit{}
+\gitdate{}
+
+\iffom 
+    \titlegraphic{\hfill\includegraphics[height=1cm]{assets/logos/fom.eps}}
+    \institute{FOM University of Applied Science \\ Business Informatics \\\\ \the\currentsemester}
+\else
+    \titlegraphic{\hfill\includegraphics[height=1cm]{assets/logos/ssbe.eps}}
+    \institute{Chair of Finance and Corporate Governance \\ Chair of Economic Statistics and Econometrics \\ Schumpeter School of Business and Economics \\ University of Wuppertal \\\\ \the\currentsemester}
+\fi
+
+% Colors Definitions
+\definecolor{LightRed}{rgb}{1,0.88,0.88}
+\definecolor{LightGreen}{rgb}{0.88,1,0.88}
+
+% Code Style Definition
+\lstdefinestyle{material}{basicstyle=\color[HTML]{2B2B2B}\small\ttfamily, keywordstyle=\color[HTML]{CC7832}, stringstyle=\color[HTML]{6A8759}, commentstyle=\color[HTML]{808080}, numberstyle=\color{gray}, frame=single, framerule=.5pt, rulecolor=\color{gray}, numbers=left, stepnumber=1, numbersep=5pt, showspaces=false, showstringspaces=false, showtabs=false, tabsize=4, breaklines=true, breakatwhitespace=true, morekeywords={None}, keywords=[2]{self}, keywordstyle=[2]\color[HTML]{94558D}, keywords=[3]{len, int, object}, keywordstyle=[3]\color[HTML]{8888C6}, keywords=[4]{__init__}, keywordstyle=[4]\color[HTML]{B200B2}, framexleftmargin=0pt, xleftmargin=3pt, linewidth=\dimexpr\linewidth}
+
+% Beamer Temlate Customization
+\setbeamertemplate{frame footer}{\the\presenters}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\newsavebox{\mytempbox}
+\setbeamertemplate{note page}
+{
+    {
+        \scriptsize
+        \usebeamerfont{note title}\usebeamercolor[fg]{note title}
+        \ifbeamercolorempty[bg]{note title}{}{
+            \insertvrule{.25\paperheight}{note title.bg}
+            \vskip-.25\paperheight
+            \nointerlineskip
+        }
+        \vbox{
+            \hspace*{.6875\paperwidth}\insertslideintonotes{0.25}
+            \vskip-0.25\paperheight
+            \nointerlineskip
+        }
+        \nointerlineskip
+        \vbox to .25\paperheight{\vskip1.5em
+            \hbox{\insertshorttitle[width=8cm]}
+            \setbox\mytempbox=\hbox{\insertsection}
+            \hbox{\ifdim\wd\mytempbox>1pt{\hskip4pt\raise3pt\hbox{\vrule
+                        width0.4pt height7pt\vrule width 9pt
+                        height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsection\end{minipage}}\fi
+            }
+            \setbox\mytempbox=\hbox{\insertsubsection}
+            \hbox{\ifdim\wd\mytempbox>1pt{\hskip17.4pt\raise3pt\hbox{\vrule
+                        width0.4pt height7pt\vrule width 9pt
+                        height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsubsection\end{minipage}}\fi
+            }
+            \setbox\mytempbox=\hbox{\insertshortframetitle}
+            \hbox{\ifdim\wd\mytempbox>1pt{\hskip30.8pt\raise3pt\hbox{\vrule
+                        width0.4pt height7pt\vrule width 9pt
+                        height0.4pt}}\hskip1pt\hbox{\insertshortframetitle[width=7cm]}\fi
+            }
+            \vfil}
+    }
+    \vskip1em
+    \nointerlineskip
+    \textwidth=13.8cm
+    \hsize=\textwidth
+    \normalsize
+    \insertnote
+}
+
+% Title Page Configuration
+\title{Big Data \& Data Science}
+\author{\textbf{\the\presenters}}
+\date{}
+
+% Beamer Configuration
+\setbeamercolor{part title}{fg=black!2, bg=mDarkTeal}
+\setbeamerfont{part title}{size=\Huge}
+
+% Caption Configuration
+\captionsetup[figure]{font={stretch=0.8}}
+
+% Hyperref Configuration
+\hypersetup{colorlinks=true, linkcolor=, urlcolor=cyan}
+
+\begin{document}
+    \maketitle
+    
+    \begin{frame}{Introduction to Big Data \& Data Science}
+        \begin{alertblock}{\textsc{License}}
+            These lecture slides as well as accompanying course materials such as source codes and notebooks have been developed by \href{https://www.saschaschworm.de}{Sascha Schworm} at the \href{https://www.wiwi.uni-wuppertal.de/}{University of Wuppertal}. Except where otherwise noted, all contents are licensed under a \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons BY-NC-SA 4.0} license.
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Contribution}}
+            If you find any mistakes in the lecture slides and/or accompanying course materials, feel free to either post an issue at the related \href{https://github.com/saschaschworm/big-data-and-data-science}{GitHub repository} or fork the repository, fix the mistakes by yourself and create a pull request. Any help is appreciated and benefits future students participating the course.
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Version}}
+            \the\gitcommit~(\the\gitdate)
+        \end{alertblock}
+    \end{frame}
+
+    \section{Preliminaries}
+    
+%    \subfile{sections/preliminaries.tex}
+    
+    \part{Introduction to Data Science and Machine Learning}
+    
+    \section{Data Science Fundamentals}
+     
+%    \subfile{sections/data-science-fundamentals.tex}
+    
+    \section{Machine Learning Fundamentals}
+    
+%    \subfile{sections/machine-learning-fundamentals.tex}
+
+    \section{Exploratory Data Analysis}
+    
+%    \subfile{sections/exploratory-data-analysis.tex}
+    
+    \part{Introduction to Data Science and Machine Learning}
+    
+    \section{Regression Models}
+    
+%    \subfile{sections/regression-models.tex}
+    
+    \section{Decision Tree Models}
+    
+%    \subfile{sections/decision-tree-models.tex}
+       
+    \section{Support Vector Machines}
+    
+%    \subfile{sections/support-vector-machines.tex}
+    
+    \section{Anomaly Detection}
+    
+%    \subfile{sections/anomaly-detection.tex}
+    
+    \section{Artificial Neural Networks}
+    
+%    \subfile{sections/artificial-neural-networks.tex}
+\end{document}
