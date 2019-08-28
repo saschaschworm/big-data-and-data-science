@@ -1,0 +1,15 @@
+vibration,error,temperature,outage
+low,no,high,no
+low,no,low,no
+high,no,high,yes
+medium,no,high,yes
+medium,yes,high,yes
+medium,yes,low,no
+high,yes,low,yes
+low,no,high,no
+low,yes,high,yes
+medium,yes,high,yes
+low,yes,low,yes
+high,no,low,yes
+high,yes,high,yes
+medium,yes,low,no
