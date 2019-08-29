@@ -1,6 +1,6 @@
 % !TeX spellcheck = en_US
 
-\documentclass[main.tex]{subfiles}
+\documentclass[document.tex]{subfiles}
 
 \begin{document}
     \subsection{Simple Linear Regression}
@@ -631,7 +631,7 @@
     \stepcounter{devexercise}
     \begin{frame}{Development Exercise \arabic{devexercise}}
         \begin{alertblock}{\textsc{Task}}
-            Import the rental prices dataset into your notebook and use the age feature as well as the 21st degree polynomial of the apartment size feature to learn a multiple regression model with L1 regularization. Concerning the hyperparameters, set both regularization and learning rate to 0.0001 and the random state to 1909 to keep results comparable. All other should be set to default. Remember to normalize the numeric features!
+            Import the rental prices dataset \textit{(datasets $\rightarrow$ exercises $\rightarrow$ rental-prices.csv} into your notebook and use the age feature as well as the 21st degree polynomial of the apartment size feature to learn a multiple regression model with L1 regularization. Concerning the hyperparameters, set both regularization and learning rate to 0.0001 and the random state to 1909 to keep results comparable. All other should be set to default. Remember to normalize the numeric features!
         \end{alertblock}
         \begin{alertblock}{\textsc{Question}}
             What is the appropriate rental price for our 10-year old 44 sqm apartment with regards to the multiple linear regression model and what is the out-of-sample root mean squared error on both training and test sets using a 10-fold cross-validation?
@@ -866,7 +866,7 @@
             \lstinputlisting[language=Python, style=material]{snippets/rental-prices-mlr-prediction-probability.py}
         \end{alertblock}
         \begin{alertblock}{\textsc{Question}}
-            Predict whether or not this student will pass the exam and give the corresponding probability estimate for it. 
+            Predict whether or not this student will pass the exam and give the corresponding probability estimate for it..
         \end{alertblock}
         \note{
             Prediction: 1, Probability Estimate: 90.10\%
@@ -874,5 +874,20 @@
             \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/exam-performance-logistic-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
             
         }
+    \end{frame}
+
+    \begin{frame}{Summary: Logistic Regression}
+        \begin{alertblock}{\textsc{Task and Type}}
+            Supervised Machine Learning Model for Classification Tasks
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Performance Measure}}
+            Accuracy, Logarithmic Loss, Area Under ROC Curve, Confusion Matrix
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Strengths}}
+            Easy robabilistic interpretation; can be regularized to avoid overfitting; can be updated easily with new data using stochastic gradient descent; tends to have a low variance
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Weaknesses}}
+            Tends to performs poorly when there are multiple or non-linear decision boundaries; not flexible enough to capture complex patterns; tends to have a high bias
+        \end{alertblock}
     \end{frame}
 \end{document}
