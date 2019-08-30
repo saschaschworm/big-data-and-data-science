@@ -263,7 +263,7 @@ model = SVR(kernel="rbf", degree=3, gamma="auto_deprecated", coef0=0.0, tol=0.00
             Import the \textbf{customer churn dataset} \textit{(datasets $\rightarrow$ exercises $\rightarrow$ customer-churn.csv)} into a notebook and learn an appropriate \textbf{support vector machine} on the target \textit{Churn}. Select appropriate features, \textbf{normalize all numeric and one-hot encode all categorical features} and perform a \textbf{randomized grid search} with \textbf{5 iterations} for the \textbf{error term from a uniform distribution with a range from 1 to 10}. Also set the random state to 1909 and the gamma value to auto.
         \end{alertblock}
         \begin{alertblock}{\textsc{Question}}
-            Will a customer that has a \textbf{one-year contract with credit card (automatic) payment method}, \textbf{monthly charges of 50EUR} and a \textbf{tenure of 20 months} will cancel the subscription? Also report the \textbf{model performance} with an \textbf{appropriate metric} using a \textbf{10-fold cross-validation}!
+            Will a telecommunication customer that has a \textbf{one-year contract with credit card (automatic) payment method}, \textbf{monthly charges of 50EUR} and a \textbf{tenure of 20 months} will cancel the subscription? Also report the \textbf{model performance} with an \textbf{appropriate metric} using a \textbf{10-fold cross-validation}!
         \end{alertblock}
         \note{
             Average Recall on Training and Test Sets (Benchmark): 76.66\%/76.60\%\\
@@ -282,6 +282,16 @@ model = SVR(kernel="rbf", degree=3, gamma="auto_deprecated", coef0=0.0, tol=0.00
 
     \note{
         Both the \textbf{training and test error are pretty close to each other} which implies that the \textbf{model is not really overfitting} the data. However, the \textbf{performance is rather low} and \textbf{hyperparameter optimization could not improve the prediction quality}. As a only a \textbf{small part of the hyperparameter space has been searched through}, it could be useful to \textbf{extend the search space} by adding more hyperparameters in the randomized search. What further can improve the prediction quality is to \textbf{choose another model} and/or to \textbf{gather/engineer further features}. 
+
+    }
+
+    \stepcounter{openexercise}
+    \begin{frame}{Open Exercise \arabic{openexercise}}
+        Why is it difficult to predict customer churns with supervised machine learning algorithms for non-subscription based services?
+    \end{frame}
+
+    \note{
+        Subscription-based contracts have a \textbf{clear expiry date} and therefore it is easy to determine whether or not a customer has churned. In non-subscription based services there is not clear expiry date and therefore is hard to determine whether or not a customer has churned. This in turn means that there is \textbf{no actual target variable} and therefore supervised learning cannot be used.
 
     }
     
