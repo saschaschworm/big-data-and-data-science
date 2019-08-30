@@ -1,6 +1,6 @@
 % !TeX spellcheck = en_US
 
-\documentclass[main.tex]{subfiles}
+\documentclass[document.tex]{subfiles}
 
 \begin{document}    
     \begin{frame}{Learning Outcomes}
@@ -172,20 +172,18 @@
         \end{minipage}
     \end{frame}
 
-    \begin{frame}{Course Outline I/II}
-        \begin{minipage}{\textwidth}
+    \begin{frame}{Course Outline}
+        \begin{minipage}[t]{.5\textwidth}
             \textbf{Lecture: Big Data \& Data Science}
             \tableofcontents[hideallsubsections]       
-            \vspace{8mm}
-            \textbf{Part I: Introduction to Data Science and Machine Learning}
-            \tableofcontents[hideallsubsections, sections={2-4}, part=1]  
+            \vspace{4.22mm}
+            \textbf{Introduction to Data Science and Machine Learning}
+            \vspace{1.22mm}
+            \tableofcontents[hideallsubsections, sections={1-7}, part=1]  
+        \end{minipage}%
+        \begin{minipage}[t]{.5\textwidth}
+            \textbf{Methods and Models in Machine Learning}
+            \tableofcontents[hideallsubsections, sections={5-9}, part=2]
         \end{minipage}
-    \end{frame}
-
-    \begin{frame}{Course Outline II/II}
-        \begin{minipage}{\textwidth}    
-            \textbf{Part II: Methods and Models in Machine Learning}
-            \tableofcontents[hideallsubsections, sections={5-9}, part=2] 
-        \end{minipage}        
     \end{frame}
 \end{document}
