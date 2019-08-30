@@ -427,6 +427,8 @@
             \end{column}
         \end{columns}
     \end{frame}
+
+    \subsection{Basic Statistics Refresher}
     
     \begin{frame}{Dataset Anatomy}
         \begin{figure}
@@ -434,4 +436,84 @@
             \includegraphics[width=\textwidth]{figures/external/dataset-anatomy.pdf}
         \end{figure}
     \end{frame}
+
+    \begin{frame}{Common Variable Types}
+        \begin{columns}
+            \begin{column}[t]{.45\textwidth}
+                \begin{justify}
+                    \alert{\textbf{\textsc{Qualitative variable}}}
+                    
+                    Qualitative variables, also called \textbf{categorical variables}, take on values that are \textbf{names or labels}, e.g., the gender.
+                \end{justify}
+            \end{column}
+            \begin{column}[t]{.45\textwidth}
+                \begin{justify}
+                    \alert{\textbf{\textsc{Quantitative variable}}}
+                    
+                    Quantitative variables are numeric and \textbf{represent a measurable quantity}, e.g., the number of people in a city.
+                \end{justify}
+            \end{column}
+        \end{columns}
+    
+        \begin{columns}
+            \begin{column}[t]{.45\textwidth}
+                \begin{justify}
+                    \alert{\textbf{\textsc{Discrete variable}}}
+                    
+                    Discrete variables can only take on a \textbf{finite number of values}, e.g., the number of cars owned.
+                \end{justify}
+            \end{column}
+            \begin{column}[t]{.45\textwidth}
+                \begin{justify}
+                    \alert{\textbf{\textsc{Continuous variable}}}
+                    
+                    Continuous variables can take on \textbf{any value in a certain range}, e.g., the body height.
+                \end{justify}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Measurement Scales}
+        \begin{columns}
+            \begin{column}[t]{.45\textwidth}
+                \begin{justify}
+                    \alert{\textbf{\textsc{Nominal scale}}}
+                    
+                    Characteristic attributes can be \textbf{distinguished}, e.g., gender. A subtype of nominal scale with only two categories (e.g. male/female) is called \textbf{dichotomous}. 
+                    \vspace*{4mm}
+                    
+                    \alert{\textbf{\textsc{Ordinal scale}}}
+                    
+                    Characteristic attributes can be \textbf{distinguished} and \textbf{ranked}, e.g., educational achievement. However, intervals between the values can neither be \textbf{compared} nor \textbf{interpreted}.
+                \end{justify}
+            \end{column}
+            \begin{column}[t]{.45\textwidth}
+                \begin{justify}
+                    \alert{\textbf{\textsc{Metric scale}}}
+                    
+                    Characteristic attributes can be \textbf{distinguished} and \textbf{ranked}. The intervals between then can be \textbf{compared}. The metric scale further divides into the \textbf{interval scale} and the \textbf{ratio scale}. The ratio scale has a \textbf{naturally given point of origin} (e.g., body weight), whereas the interval scale has an \textbf{artificially given point of origin} (e.g., calculation of times).
+                \end{justify}
+            \end{column}
+        \end{columns}
+    \end{frame}	
+
+    \stepcounter{openexercise}
+    \begin{frame}{Open Exercise \arabic{openexercise}}
+        For each of the following features below state whether it is qualitative or quantitative and whether it is discrete or continuous. Also state its measurement scale.
+        
+        \begin{enumerate}[a)]
+            \item Postal code (e.g., 42119)
+            \item Income group (e.g., < \$20,000, \$20,000-\$40,000, > \$40,000)
+            \item Body height (e.g., 189cm)
+            \item Temperature in degree Centigrade (e.g., 20°C)
+        \end{enumerate}
+    \end{frame}	
+
+    \note[itemize]
+    {
+        \item[a)]{Qualitative, discrete, nominal scale}
+        \item[b)]{Qualitative, discrete, ordinal scale}
+        \item[c)]{Quantitative, metric, ratio scale}
+        \item[d)]{Quantitative, metric, interval scale}
+    }
 \end{document}
