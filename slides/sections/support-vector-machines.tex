@@ -1,0 +1,302 @@
+% !TeX spellcheck = en_US
+
+\documentclass[document.tex]{subfiles}
+
+\begin{document}
+    \subsection{Hyperplanes}
+
+    \begin{frame}{Hyperplanes}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item In a $n$-dimensional space, a \textbf{hyperplane} is a flat affine subspace of dimension $n - 1$. So for example, in $\mathbb{R}^2$, a hyperplane is a flat \textbf{one-dimensional subspace} - or in other words, a \textbf{line}. In $\mathbb{R}^3$, a hyperplane is a flat \textbf{two-dimensional subspace} - or in other words, a \textbf{plane}.
+                    \item A hyperplane is defined by $\beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_nX_n = 0$ for parameters $\beta_0, \beta_1, \dots, \beta_n$. Any point $X = (X_1, X_2, \dots, X_n)^T$ for which the above equation holds is a \textbf{point on the hyperplane}. If $X$ satisfies $\beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_nX_n > 0$ then $X$ lies to \textbf{one side of the hyperplane} and if $X$ satisfies  $\beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_nX_n < 0$ then $X$ lies on the \textbf{other side of the hyperplane}.
+                    \item  Therefore it is easy to \textbf{determine on which side} of the hyperplane a \textbf{point lies} by just \textbf{calculating the sign} of the left hand side of the above equation.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:hyperplane-1}
+                    \includegraphics[width=\textwidth]{figures/hyperplane-1.pdf}
+                \end{figure}
+                \begin{figure}
+                    \label{fig:hyperplane-2}
+                    \includegraphics[width=\textwidth]{figures/hyperplane-2.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Separating Hyperplanes}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item A \textbf{hyperplane divides a $\boldsymbol{n}$-dimensional space into two halves}, so imagine we are able to \textbf{find a hyperplane} that \textbf{perfectly separates} the \textbf{training instances} with respect to their corresponding class labels.
+                    \item Such \textbf{separating hyperplane} can be used to construct a \textbf{classifier}: an \textbf{individual instance} is assigned a class depending on \textbf{which side of the hyperplane} it is located.
+                    \item Classifier that are based on a separating hyperplane lead to a \textbf{linear decision boundary} (like in logistic regression).
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:separating-hyperplane}
+                    \includegraphics[width=\textwidth]{figures/hyperplane-seperating.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Maximal Margin Hyperplane}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item If the training instances are \textbf{perfectly separable} then there will exist an \textbf{infinite number} of \textbf{separating hyperplanes}.
+                    \item To construct a \textbf{classifier} based upon a \textbf{separating hyperplane}, we must decide \textbf{which} of the infinite possible \textbf{separating hyperplanes should be used}.
+                    \item The idea is to find the \textbf{separating hyperplane} that is \textbf{farthest} from the training instances. That is, the distance from each training instance to a given separating hyperplane must be calculated. The smallest such distance is the \textbf{minimal distance from the training instances to the hyperplane} and is known as \textbf{margin}.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:maximal-margin-hyperplane}
+                    \includegraphics[width=\textwidth]{figures/maximal-margin-hyperplane.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \subsection{Margin Classifiers}
+
+    \begin{frame}{Maximal Margin Classifier}
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\begin{itemize}
+					\item The \textbf{separating hyperplane} for which the \textbf{margin is largest} is called \textbf{maximal margin hyperplane}.
+					\item Classifying a test instance (here: the blue cross) is based on which side of the \textbf{maximal margin hyperplane} the test instance lies. The accordant classifier is called \textbf{maximal margin classifier}. 
+					\item The idea here is that when a classifier has a \textbf{large margin on the training data} it will also have a \textbf{large margin on the test data} which in turn allows to \textbf{classify test instances correctly}.
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\begin{figure}
+					\label{fig:maximal-margin-classifier}
+                    \includegraphics[width=\textwidth]{figures/maximal-margin-classifier.pdf}
+				\end{figure}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+    \begin{frame}{Support Vectors}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item The figure on the right side shows \textbf{three training instances equidistant} from the \textbf{maximal margin hyperplane} lieing along the \textbf{width of the margin} indicated by the \textbf{dashed lines}.
+                    \item These three instances are known as \textbf{support vectors}. \textit{Vectors} since they are \textbf{vectors} in euclidean space; \textit{support} since they \textbf{support the maximal margin hyperplane} insofar as if these \textbf{points were moved}, the \textbf{maximal margin hyperplane would move as well}.
+                    \item Thus, the \textbf{maximal margin hyperplane} depends only on the \textbf{support vectors} but not on the other instances. \textbf{Moving} any other instance would therefore \textbf{not affect} the separating hyperplane, at least they do \textbf{not cross the boundary} set by the margin.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:support-vectors}
+                    \includegraphics[width=\textwidth]{figures/support-vectors.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+    
+    \begin{frame}{Maximal Margin Classifier Problems}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item The \textbf{maximal margin classifier} is a very \textbf{simple way} to perform \textbf{classification}. Unfortunately, in \textbf{many cases} it is \textbf{not possible} to separate the two classes \textbf{distinctly} and thus there are \textbf{no separating hyperplanes} and thus there is \textbf{no maximal margin classifier}.
+                    \item And even if there is a separating hyperplane, a classifier based on such hyperplane \textbf{perfectly classifies all training instances} and is therefore \textbf{extremely sensitive} to a change in a single instance (\textbf{high variance}), which means that it may have \textbf{overfit} the data.
+                    \item Nevertheless, it is possible to \textbf{extend the idea of a separating hyperplane} to a hyperplane that not exactly but \textbf{almost separates the classes} by using a \textbf{soft margin}. The \textbf{generalization} of the \textbf{maximal margin classifier} to the \textbf{non-separable case} is known as the \textbf{support vector classifier}.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:maximal-margin-classifier-problems}
+                    \includegraphics[width=\textwidth]{figures/maximal-margin-classifier-problems.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \subsection{Support Vector Classifiers and Machines}
+    
+    \begin{frame}{Support Vector Classifier}
+        \begin{itemize}
+            \item A \textbf{support vector classifier} (or soft margin classifier) addresses the problem of \textbf{non-separable data} and \textbf{overfitting} by using a hyperplane that does not perfectly separate the data in two distinct classes.
+            \item Instead of finding the \textbf{largest possible margin} so that every instance is not only on the correct side of the hyperplane but also in the correct side of the margin, support vector classifers allow some instances to be on the \textbf{incorrect side of the margin} or even on the \textbf{incorrect side of the hyperplane}. The margin therefore is called a \textbf{soft margin} as it can be \textbf{violated} by some of the training instances.
+            \item Instances that appear on the \textbf{wrong side of the hyperplane} correspond to training instances that are \textbf{misclassified} by the support vector classifier.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Error Term}
+        The underlying \textbf{optimization problem} of a support vector classifier introduces a \textbf{slack variable} $\boldsymbol{\epsilon_i}$ which indicates the \textbf{location} of the $i$th instance \textbf{relative to the hyperplane} and \textbf{relative to the margin}.
+        \begin{figure}
+            \label{fig:support-vector-errors}
+            \includegraphics[width=\textwidth]{figures/support-vector-errors.pdf}
+        \end{figure}
+
+        If $\epsilon_i = 0$ then the $i$th instance is on the correct side of the margin, if $\epsilon_i > 0$ then it is on the wrong side of the margin and if $\epsilon_i > 1$ then it is on the wrong side of the hyperplane.
+    \end{frame}
+    
+    \begin{frame}{Penalty Parameter}
+        \begin{itemize}
+            \item The hyperparameter $C$ \textbf{limits the sum} of all $\epsilon_i$'s and therefore determines the \textbf{number and serverity of violations} to the margin and to the hyperplane that will be \textbf{tolerated}. It acts like a \textbf{budget} for the amount that the margin can be violated by the $m$ instances. Therefore, $C$ controls the \textbf{bias-variance trade-off}. 
+            \item If $\boldsymbol{C = 0}$ then there is \textbf{no budget for violations} to the margin which is equivalent to the \textbf{maximal margin classifier}. If $\boldsymbol{C > 0}$ then no more than $C$ instances must be on the\textbf{ wrong side of the hyperplane}.
+            \item The \textbf{support vectors} here are instances that lie \textbf{directly on the margin} or on the \textbf{wrong side of the margin} for their class. Only \textbf{these instances affect the hyperplane} and thus the classifier obtained.
+            \item When $C$ is large, there are \textbf{few support vectors} and so the \textbf{margin is narrow} and \textbf{rarely violated} by instances. The obtained classifier is \textbf{highly fit to the data}, which may have \textbf{low bias} but \textbf{high variance}.
+            \item When $C$ is small, there are \textbf{many support vectors} and so the \textbf{margin is wide} and \textbf{commonly violated} by instances. The obtained classifier has \textbf{low variance} as many instances are support vectors but \textbf{high bias}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Penalty Parameter Effect}
+        \begin{figure}
+            \label{fig:support-vector-penalties}
+            \includegraphics[width=\textwidth]{figures/support-vector-penalties.pdf}
+        \end{figure}
+    \end{frame}
+    
+    \begin{frame}{Support Vector Machines I/II}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item If the \textbf{decision boundary} between two classes is \textbf{linear}, the support vector classifier is a very \textbf{intuitive approach for classification}. But in practice, one is often faced with \textbf{non-linear class boundaries}. 
+                    \item In this case it is clear that a \textbf{support vector classifier} or any other \textbf{linear classifier} will \textbf{perform badly} in terms of classification.
+                    \item As we have already seen, the \textbf{performance of linear regression} also can suffer in case of \textbf{non-linearity between features and target}. To address this problem, we have \textbf{enlarged the feature space} using functions of the features such as \textbf{quadratic} and \textbf{cubic terms}.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:support-vector-machines}
+                    \includegraphics[width=\textwidth]{figures/support-vector-machines.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+    
+    \begin{frame}{Cover's Theorem}
+        \textit{ "A complex pattern-classification problem, cast in a high-dimensional space nonlinearly, is more likely to be linearly separable than in a low-dimensional space, provided that the space is not densely populated".}
+    
+        Thomas M. Cover, 1965
+    \end{frame}
+    
+    \begin{frame}{Support Vector Machines II/II}
+        \begin{itemize}
+            \item In the case of the\textbf{ support vector classifiers}, the problem could be addressed in a similar way, by \textbf{enlarging the feature space} using \textbf{quadratic}, \textbf{cubic}, and even \textbf{higher-order polynomial functions} of the features or alternatively other functions of the features rather than polynomials.
+            \item It is easy to see that there is an \textbf{infinite amount of ways} to enlarge the feature space and thus - when not careful - ending up with a \textbf{huge number of features} which leads to \textbf{poor classification performance} and \textbf{unmanageable computations}.
+            \item \textbf{Support vector machines} are an extension to support vector classifiers that allow to enlarge the feature space in a way that leads to \textbf{efficient computations} by using \textbf{kernels}.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Kernels}
+        \begin{itemize}
+            \item Without going into deep, the \textbf{solution to the support vector classifier} problem involves only the \textbf{inner products} of the instances. Thus the inner product of two instances $x_i, x_{i'}$ is given by $\langle x_i, x_{i'}\rangle = \sum_{j=1}^{n} x_{ij} x_{i'j}$. 
+            \item The \textbf{linear support vector classifier} can then be represented as $h(x) = \beta_0 + \sum_{i=1}^{m}\alpha_i\langle x, x_{i}\rangle$, where the parameters $\beta_0$ and $\alpha_1, \dots, \alpha_n$ for all training instances are estimated during training. $\alpha_i$ is nonzero only for the support vectors in the solution. If a training instance is not a support vector, then its $\alpha_i$ equals zero.
+            \item The \textbf{generalization} of the \textbf{inner product} is $K(x_i, x_{i'})$ where $K$ is a function that is referred to as \textbf{kernel}, which is a function that \textbf{quantifies the similarity} of two instances. 
+            \item When a \textbf{support vector classifier} is combined with a \textbf{kernel}, the \textbf{resulting classifier} is known as \textbf{support vector machine} which function has the form $h(x) = \beta_0 + \sum_{i=1}^{m}\alpha_iK(x, x_{i})$. A \textbf{linear kernel} of form $K(x_i, x_{i'}) = \sum_{j=1}^{n} x_{ij} x_{i'j} = \langle x, x_{i}\rangle$ would just give back the above \textbf{linear support vector classifier}.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Polynomial and Radial Kernel}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item As it is a lot \textbf{easier} to get the \textbf{inner product} in a \textbf{higher dimensional space} than the \textbf{actual points} in a \textbf{higher dimensional space}, specific kernels exist to so.
+                    \item The \textbf{polynomial kernel} of degree $d$ has the form $K(x_i, x_{i'}) = (1 + \sum_{j=1}^{n} x_{ij} x_{i'j})^d$. Such kernel with $d > 1$ leads to a much more \textbf{flexible decision boundary}. For $d = 1$ the \textbf{support vector machine} reduces to \textbf{support vector classifier} again.
+                    \item Another popular and commonly used kernel is the \textbf{radial basis function kernel (RBF kernel)} which has the form $K(x_i, x_{i'}) = exp(-\gamma\sum_{j=1}^{n} (x_{ij} - x_{i'j})^2)$ and is illustrated on the right side.
+                    \item Which \textbf{kernel} to use and how to set the corresponding \textbf{hyperparameters} $d$ (polynomial kernel) and $\gamma$ (RBF kernel) correctly has to be figured out during \textbf{hyperparameter tuning}.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:kernel-1}
+                    \includegraphics[width=\textwidth]{figures/kernel-1.pdf}
+                \end{figure}
+                \begin{figure}
+                    \label{fig:kernel-2}
+                    \includegraphics[width=\textwidth]{figures/kernel-2.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame}
+    
+    \begin{frame}{Kernel Trick}
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                \begin{itemize}
+                    \item  This implies that in order to \textbf{transform} the data into a \textbf{higher dimensional data}, there is no need to compute the \textbf{exact transformation} of our data, but just the \textbf{inner product} in that higher dimensional space which is called \textbf{kernel trick}.
+                    \item The advantage of using kernels instead of simply enlarging the feature space using functions of the original features is that it \textbf{reduces computational costs} as projecting $n$ features into $n$ dimensions is computationally intensive as $n$ grows large.
+                    \item Fitting on \textbf{kernel-transformed data} can be done \textbf{implicitly} and without ever building the full $n$-dimensional representation of the kernel projection.
+                    \item For some kernels, the feature space is \textbf{implicit} and \textbf{infinite-dimensional}, so it would never be possible to do computations there anyway.
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \label{fig:rbf-kernel}
+                    \includegraphics[width=\textwidth]{figures/rbf-kernel.pdf}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    \end{frame} 
+
+    \begin{frame}[fragile]{Python Implementation: Support Vector Machine}
+        \begin{lstlisting}[language=Python, style=material]
+# Additional Import Definitions
+from sklearn.svm import SVC # Support Vector Machine for Classification
+from sklearn.svm import SVR # Support Vector Machine for Regression
+
+# Classification Model Initialization
+model = SVC(C=1.0, kernel="rbf", degree=3, gamma="auto_deprecated", coef0=0.0,
+            shrinking=True, probability=False, tol=0.001, cache_size=200, 
+            class_weight=None, verbose=False, max_iter=-1, decision_function_shape="ovr",
+            random_state=1909)
+
+# Regression Model Initialization
+model = SVR(kernel="rbf", degree=3, gamma="auto_deprecated", coef0=0.0, tol=0.001, C=1.0, 
+            epsilon=0.1, shrinking=True, cache_size=200, verbose=False, max_iter=-1)
+        \end{lstlisting}
+    \end{frame}
+
+    \stepcounter{devexercise}
+    \begin{frame}{Development Exercise \arabic{devexercise}}
+        \begin{alertblock}{\textsc{Task}}
+            Import the \textbf{customer churn dataset} \textit{(datasets $\rightarrow$ exercises $\rightarrow$ customer-churn.csv)} into a notebook and learn an appropriate \textbf{support vector machine} on the target \textit{Churn}. Select appropriate features, \textbf{normalize all numeric and one-hot encode all categorical features} and perform a \textbf{randomized grid search} with \textbf{5 iterations} for the \textbf{error term from a uniform distribution with a range from 1 to 10}. Also set the random state to 1909 and the gamma value to auto.
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Question}}
+            Will a customer that has a \textbf{one-year contract with credit card (automatic) payment method}, \textbf{monthly charges of 50EUR} and a \textbf{tenure of 20 months} will cancel the subscription? Also report the \textbf{model performance} with an \textbf{appropriate metric} using a \textbf{10-fold cross-validation}!
+        \end{alertblock}
+        \note{
+            Average Recall on Training and Test Sets (Benchmark): 76.66\%/76.60\%\\
+            Average Recall on Training and Test Sets: 76.82\%/76.40\%\%\\
+            Prediction: array(['No'], dtype=object)
+            
+            \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/churn-support-vector-machine.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+
+        }
+    \end{frame}
+
+    \stepcounter{openexercise}
+    \begin{frame}{Open Exercise \arabic{openexercise}}
+        What are your conclusions from the previous development exercise and what next steps are potentially useful in order to improve the prediction quality?
+    \end{frame}
+
+    \note{
+        Both the \textbf{training and test error are pretty close to each other} which implies that the \textbf{model is not really overfitting} the data. However, the \textbf{performance is rather low} and \textbf{hyperparameter optimization could not improve the prediction quality}. As a only a \textbf{small part of the hyperparameter space has been searched through}, it could be useful to \textbf{extend the search space} by adding more hyperparameters in the randomized search. What further can improve the prediction quality is to \textbf{choose another model} and/or to \textbf{gather/engineer further features}. 
+
+    }
+    
+    \begin{frame}{Summary: Support Vector Machines}
+        \begin{alertblock}{\textsc{Task and Type}}
+            Supervised Machine Learning Model for Regression and Classification Tasks
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Performance Measure}}
+            RMSE, Accuracy, Precision, Recall, F1, Area Under ROC Curve, Confusion Matrix
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Strengths}}
+            Non-linear decision boundaries; many kernels to choose from; robust against overfitting (hyperparameter $C$); convex optimization problem $\rightarrow$ no local minima.
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Weaknesses}}
+            Difficult to choose a "good" kernel; long training time for large datasets; difficult to understand and interpret the final model.
+        \end{alertblock}
+    \end{frame}
+\end{document}
