@@ -14,7 +14,7 @@
         
         Unfortunately, none of the apartments in the dataset has a size of exactly 44 sqm. So, the central problem now is, \textbf{how can we learn a model to predict the rental price for the apartment as a function of its size}?
 
-        \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/rental-prices-single-linear-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+        \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/rental-prices-single-linear-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
     \end{frame}
 
     \stepcounter{openexercise}
@@ -419,7 +419,7 @@
                     \item What we want to use now is an \textbf{extension to simple linear regression} in which the relationship between the feature and the target is modeled as an \textbf{higher-degree polynomial} in the feature which gives the \textbf{polynomial regression} its name.
                     \vspace{1mm}
                     
-                    \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/rental-prices-polynomial-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+                    \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/rental-prices-polynomial-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
                 \end{itemize}
             \end{column}
             \begin{column}{0.4\textwidth}
@@ -453,7 +453,7 @@
         \note{
             The average root mean squared error on the training sets is \textbf{155,072,833,004,037,312.00 EUR} and on the test sets \textbf{157,317,771,079,220,768.00 EUR} which is even worse than our \textbf{baseline simple linear regression} where the results have been 47.28 EUR on the training sets and 45.58 EUR on the test sets.
             
-            \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/polynomial-transformation.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+            \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/polynomial-transformation.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
 
         }
     \end{frame}
@@ -606,7 +606,7 @@
 
         How does this additional feature helps reducing the \textbf{unexplained variance} how does this affect the \textbf{prediction error} as well as the prediction itself?
         
-        \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/rental-prices-multiple-linear-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+        \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/rental-prices-multiple-linear-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
     \end{frame}
 
      \begin{frame}{Multiple Linear Regression Hypothesis}
@@ -631,7 +631,7 @@
     \stepcounter{devexercise}
     \begin{frame}{Development Exercise \arabic{devexercise}}
         \begin{alertblock}{\textsc{Task}}
-            Import the rental prices dataset \textit{(datasets $\rightarrow$ exercises $\rightarrow$ rental-prices.csv} into your notebook and use the age feature as well as the 21st degree polynomial of the apartment size feature to learn a multiple regression model with L1 regularization. Concerning the hyperparameters, set both regularization and learning rate to 0.0001 and the random state to 1909 to keep results comparable. All other should be set to default. Remember to normalize the numeric features!
+            Use the age feature as well as the 21st degree polynomial of the apartment size feature to learn a multiple regression model with L1 regularization. Concerning the hyperparameters, set both regularization and learning rate to 0.0001 and the random state to 1909 to keep results comparable. All other should be set to default. Remember to normalize the numeric features!
         \end{alertblock}
         \begin{alertblock}{\textsc{Question}}
             What is the appropriate rental price for our 10-year old 44 sqm apartment with regards to the multiple linear regression model and what is the out-of-sample root mean squared error on both training and test sets using a 10-fold cross-validation?
@@ -639,7 +639,7 @@
         \note{
             The appropriate rental price for the 10-year old 44 sqm apartment is \textbf{515.35 EUR} and the average root mean squared error on the training sets is \textbf{22.32 EUR} and on the test sets \textbf{30.33 EUR} which is a great improvement compared to our \textbf{baseline simple linear regression} where the results have been 47.28 EUR on the training sets and 45.58 EUR on the test sets.
             
-            \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/rental-prices-multiple-linear-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+            \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/rental-prices-multiple-linear-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
             
         }
     \end{frame}
@@ -670,7 +670,7 @@
     
         Based on the features given, we want to \textbf{predict for any future student} participating this course \textbf{whether or not he or she will pass the exam}. \textit{Remark: this data has been simulated and does not represent any real cases.}
         
-        \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/exam-performance-logistic-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+        \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/demos/exam-performance-logistic-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
     \end{frame}
 
     \stepcounter{openexercise}
@@ -871,7 +871,7 @@
         \note{
             Prediction: 1, Probability Estimate: 90.10\%
             
-            \small{\href{https://github.com/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/exam-performance-logistic-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
+            \small{\href{https://nbviewer.jupyter.org/github/saschaschworm/big-data-and-data-science/blob/master/notebooks/development-exercises/exam-performance-logistic-regression.ipynb}{\textsc{\textbf{$\rightarrow$ open notebook in github}}}}
             
         }
     \end{frame}
