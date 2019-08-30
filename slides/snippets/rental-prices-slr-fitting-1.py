@@ -4,7 +4,9 @@ import pandas as pd
 from sklearn.linear_model import SGDRegressor
 
 # Dataset Import
-data = pd.read_csv('../datasets/demos/rental-prices.csv')
+data = pd.read_csv(
+    'https://raw.githubusercontent.com/saschaschworm/big-data-and-data-science/'
+    'master/datasets/demos/rental-prices.csv')
 
 # Datset Split into Feature Matrix X and Target Vector y
 X, y = data[['apartment_size']], data['rental_price']

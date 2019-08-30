@@ -2,7 +2,9 @@
 from sklearn.tree import DecisionTreeClassifier
 
 # Dataset Import
-data = pd.read_csv('../datasets/demos/outages.csv')
+data = pd.read_csv(
+    'https://raw.githubusercontent.com/saschaschworm/big-data-and-data-science/'
+    'master/datasets/demos/outages.csv')
 
 # Datset Split into Feature Matrix X and Target Vector y
 X, y = data.iloc[:, 0:3], data['outage']

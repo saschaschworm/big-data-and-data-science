@@ -2,7 +2,9 @@
 from sklearn.linear_model import SGDClassifier
 
 # Dataset Import
-data = pd.read_csv('../datasets/demos/exam-performance.csv')
+data = pd.read_csv(
+    'https://raw.githubusercontent.com/saschaschworm/big-data-and-data-science/'
+    'master/datasets/demos/exam-performance.csv')
 
 # Datset Split into Feature Matrix X and Target Vector y
 X, y = data[['hours_studied', 'hours_slept']], data['passed']
