@@ -5,6 +5,7 @@
 \begin{document}    
     \section{Preliminaries}
     
+    \iffom 
     \begin{frame}{Learning Outcomes}
         \textbf{After successfully completing the module, you will be able to:}
         \begin{itemize}
@@ -17,7 +18,7 @@
             \item substantiate findings determined by "data science" via statistical and mathematical bases.
         \end{itemize}
     \end{frame}
-
+	
     \begin{frame}{Examination Modalities}
         \alert{\textbf{\textsc{Examinations}}}
         \vspace{-1mm}
@@ -71,6 +72,11 @@
             \item If all those \textbf{items are graded at least 4.0} then \textbf{one third of the grade} is determined by the \textbf{goodness of the predictions}. This means that the seminar paper with the worst predictions gets a 4.0 in this particular aspect whereas the best seminar paper gets a 1.0. All other grades are interpolated between those.
         \end{itemize}
     \end{frame}
+    \else
+    \begin{frame}{Course Description}
+        The ability to \textbf{understand and work with data} has become a highly demanded major requirement both in the field of academics and business. This course offers the opportunity to dive into the area of data science by theoretically and practically exploring its fundamental principles. Several examples, live demos, and hands-on exercises during class train \textbf{data-analytic thinking} and \textbf{technical abilities} so that participants can utilize the conveyed knowledge and tools to \textbf{solve a specific empirical problem and/or practical task}. The independent solving of such problem and/or task as well as the presentation, interpretation, and critical assessment of the results is expected from the participants in a \textbf{seminar presentation} as well as in the \textbf{seminar paper}.
+    \end{frame}
+    \fi
 
     \begin{frame}{20th Annual KDnuggets Software Poll}
         \begin{figure}
@@ -81,18 +87,21 @@
     
     \begin{frame}{Jupyter Programming Environment}
         \begin{alertblock}{\textsc{Google Colaboratory}}
+        	\vspace*{.1mm}
             Google Colaboratory is a Jupyter notebook environment bases on Python 3.6. used for machine learning education and research with Python. It is free to use and requires no setup. 
             \vspace{-1mm}
             
             \textsc{\textbf{Link:}} \href{https://colab.research.google.com/}{https://colab.research.google.com/}
         \end{alertblock}
         \begin{alertblock}{\textsc{Kaggle}}  
+        	\vspace*{.1mm}
             Kaggle offers a no-setup, customizable, Jupyter Notebooks environment. Access free GPUs and a huge repository of community published data \& code.
             \vspace{-1mm}
 
             \textsc{\textbf{Link:}} \href{https://www.kaggle.com/}{https://www.kaggle.com/}
         \end{alertblock}
         \begin{alertblock}{\textsc{Anaconda}}
+        	\vspace*{.1mm}
             If you want to setup a local Python programming environment, you should use the Anaconda distribution as it is one of the most popular Python data science distributions and is therefore properly documented.
             \vspace{-1mm}
             
@@ -100,9 +109,65 @@
         \end{alertblock}
     \end{frame}
 
+    \iffom
     \begin{frame}{Auxiliary Materials}
         You will find all \textbf{datasets} we will be using during the lectures in the accompanying \textbf{GitHub repository} available at \href{https://github.com/saschaschworm/big-data-and-data-science}{https://github.com/saschaschworm/big-data-and-data-science}. There you will also find all \textbf{solutions to the development exercises} you will be conducting in class as \textbf{Jupyter notebook} as well as a \textbf{minimum working example} for the seminar paper.
     \end{frame}
+    \else
+    \begin{frame}{Auxiliary Materials}
+        \begin{alertblock}{\textsc{Lecture Slides and Texts}}
+            \vspace*{-.1mm}
+            Lecture slides and texts can be downloaded from \textit{Moodle}. Navigate to \textit{Schumpeter School of Business and Economics} $\rightarrow$ \textit{Methoden} $\rightarrow$ \textit{Statistik} and select the course \textit{Master-Seminar in Applied Econometrics: Data Science Basics (WiSe 19/20)}. The course password is \textit{\textbf{unsupervised}}.
+        \end{alertblock}
+        
+        \begin{alertblock}{\textsc{Datasets and Code Snippets}}
+            \vspace*{-.1mm}            
+            You will find all \textbf{datasets} we will be using during the lectures in the accompanying \textbf{GitHub repository} available at \href{https://github.com/saschaschworm/big-data-and-data-science}{https://github.com/saschaschworm/big-data-and-data-science}. A registration is not required. The datasets for the seminar paper are available on Moodle.
+        \end{alertblock}
+    \end{frame}
+    \fi
+    
+    \unless\iffom
+    \begin{frame}{Seminar Requirements}
+        \begin{alertblock}{\textsc{Seminar paper}}
+            \begin{itemize}
+                \item The primary objective of the seminar paper is to \textbf{practically} apply the \textbf{methods and models} discussed during the lectures on a \textbf{selectable} dataset in order to \textbf{solve a specific underlying business problem}.
+                \item Besides the practical implementation, the seminar paper should cover a \textbf{detailed elaboration of the underlying theory} of both the business problem and the used methods and models (e.g., current state of research, academic void).
+                \item The seminar paper may be written in either \textbf{German or English}, must consist of \textbf{15 pages excluding indices and appendices} and has to be submitted until \textbf{January 26th, 2020 11:59pm}. 
+            \end{itemize}
+        \end{alertblock}
+        \begin{alertblock}{\textsc{Presentation}}
+            \begin{itemize}
+                \item The presentation should cover an \textbf{introduction to the business problem}, a short \textbf{description of the used machine learning model} as well as its \textbf{strengths and weaknesses}, the \textbf{results} and the \textbf{implications} of your research. The presentation should take \textbf{15 minutes}.
+                \item Presentations as well as follow-up discussions will be scheduled somewhere in \textbf{between the first two weeks of the upcoming summer term}.
+            \end{itemize}
+        \end{alertblock}	
+    \end{frame}
+
+    \begin{frame}{Seminar Paper Topics and Datasets}
+        1. Bank Telemarketing Conversion [FINANCE, MARKETING] 
+        
+        2. Bike Sharing Demand [LOGISTICS]
+        
+        3. Core Inflation [ECONOMICS]
+        
+        4. Credit Scoring [FINANCE]
+        
+        5. Employee Attrition and Performance [HR] 
+        
+        6. Intrusion Detection [SECURITY]
+        
+        7. Insurance Campaign Management [HEALTH, MARKETING] 
+        
+        8. Medical Appointment No-Show [HEALTH]
+        
+        9. Predictive Maintenance [LOGISTICS, PRODUCTION]
+        
+        10. Store Inventory Demand [LOGISTICS] 
+        
+        11. Telco Customer Churn [MARKETING]
+    \end{frame}
+    \fi
 
     \begin{frame}{Literature Recommendations}
         \begin{minipage}{0.1\textwidth}
@@ -185,7 +250,7 @@
         \end{minipage}%
         \begin{minipage}[t]{.5\textwidth}
             \textbf{Methods and Models in Machine Learning}
-            \tableofcontents[hideallsubsections, sections={5-9}, part=2]
+            \tableofcontents[hideallsubsections, sections={4-9}, part=2]
         \end{minipage}
     \end{frame}
 \end{document}

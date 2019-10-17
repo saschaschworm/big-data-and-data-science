@@ -40,13 +40,13 @@
 \newcounter{devexercise}
 
 % Default Feature Flags
-\fomtrue
+\fomfalse
 
 % Default Tokens
 \currentsemester{Winter Term 2019/2020}
 \presenters{Sascha Schworm, M.Sc.}
-\gitcommit{}
-\gitdate{}
+\gitcommit{48b74ef}
+\gitdate{Sat Aug 31 17:55:38 2019 +0200}
 
 \iffom 
     \titlegraphic{\hfill\includegraphics[height=1cm]{assets/logos/fom.eps}}
@@ -113,7 +113,8 @@
 }
 
 % Title Page Configuration
-\title{Big Data \& Data Science}
+\title{Introduction to Data Science}
+\subtitle{\vspace*{-2mm}Master Seminar in Applied Econometrics}
 \author{\textbf{\the\presenters}}
 \date{}
 
@@ -130,14 +131,17 @@
 \begin{document}
     \maketitle
     
-    \begin{frame}{Introduction to Big Data \& Data Science}
+    \begin{frame}{Introduction to Data Science}
         \begin{alertblock}{\textsc{License}}
+        	\vspace*{.1mm}        	
             These lecture slides as well as accompanying course materials such as source codes and notebooks have been developed by \href{https://www.saschaschworm.de}{Sascha Schworm} at the \href{https://www.wiwi.uni-wuppertal.de/}{University of Wuppertal}. Except where otherwise noted, all contents are licensed under a \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons BY-NC-SA 4.0} license.
         \end{alertblock}
         \begin{alertblock}{\textsc{Contribution}}
+        	\vspace*{.1mm}
             If you find any mistakes in the lecture slides and/or accompanying course materials, feel free to either post an issue at the related \href{https://github.com/saschaschworm/big-data-and-data-science}{GitHub repository} or fork the repository, fix the mistakes by yourself and create a pull request. Any help is appreciated and benefits future students participating the course.
         \end{alertblock}
         \begin{alertblock}{\textsc{Version}}
+        	\vspace*{.1mm}
             \the\gitcommit~(\the\gitdate)
         \end{alertblock}
     \end{frame}
