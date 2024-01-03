@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 import pandas as pd
 import plotly.express as px
 import streamlit as st
