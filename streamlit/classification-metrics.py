@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
         try:
             fscore = 2 * ((precision * recall) / (precision + recall))
-        except TypeError:
+        except (TypeError, ZeroDivisionError):
             fscore = None
 
         st.dataframe(df, use_container_width=True, hide_index=True, column_config={
