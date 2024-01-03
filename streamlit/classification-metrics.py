@@ -94,5 +94,5 @@ if __name__ == "__main__":
             {"Metric": "Accuracy", "Value": f"{accuracy * 100:.2f} %", "Description": "What fraction of predictions the model got right?"},
             {"Metric": "Precision/Positive Predictive Value", "Value": f"{precision * 100:.2f} %" if precision else "N/A", "Description": "What proportion of positive identifications was actually correct?"},
             {"Metric": "Recall/True Positive Rate", "Value": f"{recall * 100:.2f} %" if recall else "N/A", "Description": "What proportion of actual positives was identified correctly?"},
-            {"Metric": "F1", "Value": f"{fscore * 100:.2f} %" if fscore else "N/A", "Description": "A true negative is an outcome where the model correctly predicts the negative class."},
+            {"Metric": "F1", "Value": f"{fscore * 100:.2f} %" if fscore else "N/A", "Description": "How good can the model effectively identify positive cases while minimizing false positives and false negatives?"},
         ]), use_container_width=True, hide_index=True)
