@@ -1,0 +1,25 @@
+{
+    "[json][jsonc]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.json-language-features",
+    },
+    "[yaml]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+    },
+    "quarto.render.previewReveal": true,
+    "quarto.render.previewType": "external",
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "quarto"
+    ]
+}
