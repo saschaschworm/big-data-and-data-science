@@ -15,7 +15,11 @@ st.set_page_config(page_title="Demand Forecasting", layout="wide")
 
 # Helper Utilities
 https = PoolManager()
-test = lambda x: x.copy().ffill()
+
+
+def ffill(x):
+    return x.copy().ffill()
+
 
 markflgs = {"LOW": "Low Marketing Activity", "MEDIUM": "Medium Marketing Activity", "HIGH": "High Marketing Activity"}
 promflgs = {"NONE": "No Promotion", "BOGO": "Buy One Get One Free", "DISCOUNT": "Discounted Price"}
