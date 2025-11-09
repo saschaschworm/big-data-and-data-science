@@ -25,6 +25,7 @@ mimesis = "^18.0.0"
 ipyleaflet = "^0.19.2"
 requests = "^2.32.3"
 skops = "^0.10.0"
+sympy = "^1.14.0"
 
 
 [build-system]
