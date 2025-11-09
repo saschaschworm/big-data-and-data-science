@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
     # Page Layout
     st.header("Visualizations")
-    left, right = st.beta_columns(spec=[0.5, 0.5])
+    left, right = st.columns(spec=[0.5, 0.5])
 
     hypothesis, gradient = get_expressions(normalized=True)
     fig: Figure = get_figure(hypothesis=hypothesis, gradient=gradient, eta0=eta0_left, origin=origin, style=style, showlabels=showlabels, showgradient=showgradient, showcomponents=showcomponents)
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
     if showcalcs:
         st.header("Calculations")
-        left, right = st.beta_columns(spec=[0.5, 0.5])
+        left, right = st.columns(spec=[0.5, 0.5])
         hypothesis, gradient = get_expressions(normalized=True)
         left.markdown(f"$f(\\theta) = {latex(hypothesis)}, \\nabla f(\\theta) = {latex(gradient)}, \\theta = {latex(Matrix([origin[0], origin[1]]))}$")
         left.markdown(f"$\\theta_{{t+1}} = \\theta_t - \eta\\nabla f(\\theta_{{t}}) = {latex(Matrix(origin))} - {eta0_left:.2f} \\times {latex(gradient.subs([(theta0, origin[0]), (theta1, origin[1])]))} = {latex(Matrix(origin) - np.round(eta0_left, 2) * gradient.subs([(theta0, origin[0]), (theta1, origin[1])]))}$")
