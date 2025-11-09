@@ -55,7 +55,7 @@ def get_figure(hypothesis: Expr, gradient: MutableDenseMatrix, eta0: float, orig
 if __name__ == "__main__":
 
     # Initialization
-    st.beta_set_page_config(page_title="Scale Invariance Demonstration", layout="wide", initial_sidebar_state="expanded")
+    st.set_page_config(page_title="Scale Invariance Demonstration", layout="wide", initial_sidebar_state="expanded")
     theta0, theta1 = symbols("theta0 theta1")
     origin: np.ndarray = np.array([-5, -5])
 
